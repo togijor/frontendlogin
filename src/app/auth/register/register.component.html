@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-header">Ingresa tus datos</div>
+  <div class="card-body">
+<form [formGroup]="registerform" (ngSubmit)="submit()">
+  <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <p>
+      <input
+      [class.is-invalid]="email?.invalid && email?.touched"
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+      name="email"
+      id="email"
+    />
+    </p>
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert">
+      <div *ngIf="email?.errors?.['required']">El email es requerido</div>
+      <div *ngIf="email?.errors?.['minlength']">debe ser un correo valido</div>
+      <!-- <div *ngIf="email.errors?.['forbiddenName']">
+        Name cannot be Bob.
+      </div> -->
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <input
+      formControlName="password"
+      type="password"
+      class="form-control"
+      id="pwd"
+      placeholder="Enter password"
+      name="pswd"
+    />
+    <div
+      *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+      class="alert"
+    >
+      <div *ngIf="password?.errors?.['required']">El password es requerido</div>
+      <div *ngIf="password?.errors?.['minlength']">
+        debe ser un password valido
+      </div>
+      <!-- <div *ngIf="email.errors?.['forbiddenName']">
+        Name cannot be Bob.
+      </div> -->
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">
+    iniciar sesión
+  </button>
+</form>
+  </div>
+  <div class="card-footer">
+  </div>
+</div>

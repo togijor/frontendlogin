@@ -1,0 +1,10 @@
+{
+  "usuarios":
+  {
+    "email":"jorge@mail.cl",
+    "nombre":"Jorge",
+    "apellido":"Gamboa",
+    "edad":28,
+    "cargo":" "
+  }
+}
